@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>
+        chat-UI
+    </title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="/static/layui/css/layui.css">
+    <link rel="stylesheet" href="/static/css/chat/style.css">
+</head>
+<script type="text/javascript" src="/static/layui/layui.all.js"></script>
+
+<body>
+    <div class="box">
+        <div class="chat-UI">
+            <!-- 隐藏个人信息 -->
+            <div id="user-info" hidden>
+                <div id="userid" th:text="${userid}">1274636043268730880</div>
+                <div id="username" th:text="${username}">1</div>
+                <div id="nickname" th:text="${nickname}">1</div>
+                <div id="useremail" th:text="${useremail}">123@qq.com</div>
+            </div>
+            <!-- 侧栏start -->
+            <div class="sidebar">
+                <div class="head-sculpture  border border-white" data-content='<div class="test">tx</div>' tabindex="0" data-trigger="focus" title="">
+                    <img class="img-rounded image-responsive rounded-20" src="https://img2.woyaogexing.com/2020/09/11/b6df8240193547dc94b8207aa68e0155!400x400.webp" alt="头像" />
+                </div>
+                <script>
+                    $(".head-sculpture")
+                        .attr("data-content", `
+                    <div class="own-head-content">
+                        <div class="own_head_top">
+                            <div class="own_head_text">
+                                <p class="own_name">` + $("#nickname").text() + `<img src="/static/img/icon/head.png" alt="" />
+                                </p>
+                                <p class="own_numb">` + $("#username").text() + `</p>
+
+                            </div>
+                            <img class="sculpture  border border-white" src="https://img2.woyaogexing.com/2020/09/11/b6df8240193547dc94b8207aa68e0155!400x400.webp" alt="" />
+                        </div>
+                        <div class="own_head_bottom">
+                            <p><span>邮箱: </span>` + $("#useremail").text() + `</p>
+                        </div>
+                    </div>`);
+                    $(function() {
+
+                        $('.head-sculpture')
+                            .popover({
+                                html: true
+                            });
+                    })
+                </script>
+                <!-- 图标 -->
+                <!-- <span class="glyphicon glyphicon-comment"></span> -->
+                <div class="side-icon">
+                    <a id="si_1"></a>
+                    <a id="si_2" style="background: url(/static/img/icon/head_3_1.png) no-repeat;"></a>
+                </div>
+                <script>
+                    $("#si_1").click(function() {
+                        $("#si_1").css("background", "url(/static/img/icon/head_2_1.png) no-repeat");
+                        $("#si_2").css("background", "url(/static/img/icon/head_3.png) no-repeat");
+                        $("#chat_list").removeClass("indisplay");
+                        $("#friend_list").addClass("indisplay");
+                    });
+                    $("#si_2").click(function() {
+                        $("#si_1").css("background", "url(/static/img/icon/head_2.png) no-repeat");
+                        $("#si_2").css("background", "url(/static/img/icon/head_3_1.png) no-repeat");
+                        $("#friend_list").removeClass("indisplay");
+                        $("#chat_list").addClass("indisplay");
+                    });
+                </script>
+                <!-- 头像end -->
+                <!-- 底部扩展键 -->
+                <div id="dropdown" data-content='<ul class="dropdown-content"><li><a href="#" id="btn-creategroup">创建群组</a></li><li><a href="#" id="btn-feedback">意见反馈</a></li><li id="btn-seeting"><a href="#">设置</a></li></ul>' tabindex="0" data-trigger="focus" title="">
+                    <button type="button" class="btn btn-outline-light"><img src="/static/img/icon/head_5.png"
+                            alt=""></button>
+                </div>
+                <script>
+                    $(function() {
+
+                        $('#dropdown')
+                            .popover({
+                                html: true
+                            });
+                        $('#dropdown').on('shown.bs.popover', function() {
+                            $("#btn-seeting").click(function() {
+                                var index = layer.open({
+                                    title: "设置",
+                                    content: `<div style="text-align: center;"><a href="https://www.baidu.com" class="btn btn-outline-danger">退出登录</a></div>`,
+                                    btn: [],
+                                    shade: 0
+                                });
+                            });
+                            $("#btn-creategroup").click(function() {
+                                var groupname = prompt("请输入您将创建的群组名字");
+                                CHATSYSTEM.createGroup(groupname);
+                            });
+                            $("#btn-feedback").click(function() {
+                                var index = layer.open({
+                                    title: "请联系我",
+                                    content: `<div style="text-align: center;">邮箱：123@qq.com</div>`,
+                                    btn: [],
+                                    shade: 0
+                                });
+                            });
+                        })
+                    });
+                </script>
+            </div>
+            <!-- 侧栏end -->
+            <!-- 聊天列表start -->
+            <div class="middle indisplay" id="chat_list">
+                <div class="input-group chat_search">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-outline-secondary" type="button">Go!</button>
+                    </span>
+                    <div class="list-group chatlist">
+                    </div>
+                </div>
+            </div>
+            <!-- 聊天列表end -->
+            <!-- 好友/群组列表start -->
+            <div class="middle" id="friend_list">
+                <div class="input-group chat_search">
+                    <input type="text" class="form-control" placeholder="添加新好友/群组..." id="search-text">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-outline-secondary" id="search-btn" type="button">+</button>
+                    </span>
+                </div>
+                <div class="list-group friendlist" id="searchlist">
+                </div>
+                <script>
+                    $("#search-text").change(() => {
+                        if ($("#search-text").val() != "") {
+                            $("#friendslist").hide();
+                            $("#searchlist").show();
+                        } else {
+                            $("#friendslist").show();
+                            $("#searchlist").hide();
+                        }
+                    });
+                    $("#search-btn").click(() => {
+                        CHATSYSTEM.searchButtonOnClickEvent();
+                    });
+                    $("#searchlist").hide();
+                    $("#friendslist").show();
+                </script>
+                <div class="list-group friendlist" id="friendslist">
+                </div>
+            </div>
+            <!-- 好友/群组列表end -->
+
+            <!-- 聊天窗口start -->
+            <div class="chatwindow">
+                <div class="window_top">
+                    <div class="windows_top_box">
+                        <span id="windows_name">早安无恙</span>
+                    </div>
+                    <button type="button" id="window_top_btn" class="btn btn-outline-light" onclick="CHATSYSTEM.windowTopBtnOnClick()"><img src="/static/img/icon/icon11.png"
+                            alt=""></button>
+                </div>
+                <div class="window_body">
+                </div>
+                <div class="window_input">
+                    <div class="window_input_tool">
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                        <a href="javascript:;"></a>
+                    </div>
+                    <div class="input_box">
+                        <textarea name="" rows="" cols="" id="input_box" readonly></textarea>
+                        <div class="input_bottom">
+                            <button id="send" onclick="CHATSYSTEM.sendMessage()" class="btn btn-outline-success btn-sm">send(Enter)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="/static/js/chat/chatsystem.js">
+            </script>
+</body>
+
+</html>

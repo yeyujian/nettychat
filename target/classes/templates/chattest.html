@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>聊天</title>
+    <script th:src="@{/static/js/jquery.min.js}"></script>
+</head>
+
+<body>
+    <div id="advice-list"></div>
+    <div id="user-info" hidden>
+        <!--/*@thymesVar id="userid" type=""*/-->
+        <div id="userid">1274636099644370944</div>
+        <div id="username"></div>
+        <div id="nickname"></div>
+        <div id="useremail"></div>
+    </div>
+    <div>
+        <select id="friend-list">
+        </select>
+    </div>
+    message:
+    <input type="text" id="message"><br>
+    <input type="button" value="发送消息" onclick="sendMsg()"> 接收到消息:
+    <p id="server_message" style="background-color: #AAAAAA"></p>
+    <script>
+        function sendMsg() {
+            CHATSYSTEM._curFocus.id = CHATSYSTEM._friends[$('#friend-list').val()].userid;
+            CHATSYSTEM.sendMessage(CHATSYSTEM.createMessage($('#message').val(), 1));
+        }
+        $('#friend-list').change(function() {
+            CHATSYSTEM._curFocus.id = CHATSYSTEM._friends[$(this).val()].userid;
+        });
+        window.CHATSYSTEM = {
+            _webSocket: null,
+            _curFocus: {
+                type: "friendid",
+                id: 0
+            },
+            USER_INFO: {
+                userid: '',
+                username: '',
+                nickname: '',
+                useremail: ''
+            },
+            SENDMSG: {
+                userid: '',
+                friendid: '',
+                groupid: '',
+                createtime: null,
+                message: ''
+            },
+            _friends: [],
+            _groups: [],
+            sendMessage: function(obj) {
+                console.log(obj);
+                this._webSocket.send(JSON.stringify(obj));
+            },
+            createMessage: function(message, type = 0, ext = null) { //创建消息体
+                var SENDMSG = new Object();
+                SENDMSG.type = type;
+                SENDMSG.message = {
+                    userid: this.USER_INFO.userid,
+                    createtime: new Date(),
+                    message: message
+                };
+                SENDMSG.message[this._curFocus.type] = this._curFocus.id;
+                return SENDMSG;
+            },
+            initUserInfo: function() {
+                this.USER_INFO.userid = document.getElementById("userid").innerText;
+                this.USER_INFO.username = document.getElementById("username").innerText;
+                this.USER_INFO.nickname = document.getElementById("nickname").innerText;
+                this.USER_INFO.useremail = document.getElementById("useremail").innerText;
+            },
+            initFriendList: function() { //初始化_firends数组
+                $.ajax({
+                    url: "/friend/findall",
+                    success: function(result) {
+                        if (result.status == 10200) {
+                            CHATSYSTEM._friends = result.data;
+                            for (var i in CHATSYSTEM._friends) {
+                                var op = document.createElement("option");
+                                op.setAttribute("value", i);
+                                op.innerText = CHATSYSTEM._friends[i].nickname;
+                                $("#friend-list").append(op);
+
+                            }
+                        } else {
+                            alert("加载好友列表失败");
+                        }
+                    },
+                    error: function() {
+                        alert("加载好友列表失败");
+                    }
+                });
+            },
+            initGroupList: function() { //初始化_groups数组
+
+            },
+            init: function() {
+                    CHATSYSTEM.initUserInfo();
+                    CHATSYSTEM.initFriendList();
+                    CHATSYSTEM.initGroupList();
+                    //判断当前浏览器是否支持 webSocket
+                    if (window.WebSocket) {
+                        this._webSocket = new WebSocket("ws://127.0.0.1:8888/ws");
+                        this._webSocket.onopen = function(ev) {
+                            console.log("建立连接");
+                            CHATSYSTEM.sendMessage(CHATSYSTEM.createMessage("hello"));
+                        }
+                        this._webSocket.onclose = function(ev) {
+                            console.log("断开连接");
+                        }
+                        this._webSocket.onmessage = function(ev) {
+                            var data = JSON.parse(ev.data);
+                            if (data.ext != undefined) {
+                                alert(ev.data);
+                                return;
+                            }
+                            console.log("接收到服务器的消息::  " + ev.data);
+                            var server_message = document.getElementById("server_message");
+                            server_message.innerHTML += ev.data + "<br/>";
+                        }
+
+                    } else {
+                        alert("当前浏览器不支持 webSocket\n 聊天室起点失败");
+                    }
+                } //init
+        }
+        CHATSYSTEM.init();
+    </script>
+</body>
+
+</html>

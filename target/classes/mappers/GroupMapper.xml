@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyj.nettychat.mapper.GroupMapper">
+    <resultMap id="GroupResultMap" type="com.yyj.nettychat.model.Group">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="masterid" jdbcType="VARCHAR" property="masterid"/>
+        <result column="createtime" jdbcType="DATE" property="createtime"/>
+        <collection property="members" column="id" ofType="com.yyj.nettychat.model.GroupMember" select="seleteMembers"/>
+    </resultMap>
+    <resultMap id="MemberResultMap" type="com.yyj.nettychat.model.GroupMember">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="groupid" jdbcType="VARCHAR" property="groupid"/>
+        <result column="createtime" jdbcType="DATE" property="createtime"/>
+        <collection property="member" column="userid" ofType="com.yyj.nettychat.model.User" select="com.yyj.nettychat.mapper.UserMapper.selectById"/>
+    </resultMap>
+    <sql id="Group_Column_List">
+    id,masterid,createtime,name
+    </sql>
+    <sql id="Groupship_Column_List">
+    id,userid,groupid,createtime,status
+    </sql>
+    <delete id="deleteGroup" parameterType="java.lang.String">
+    delete from `group`
+    where id = #{id,jdbcType=VARCHAR} and masterid=#{masterid,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insertGroup" parameterType="com.yyj.nettychat.model.Group">
+    insert into `group`(id,masterid,name,createtime)
+    values ( #{id,jdbcType=VARCHAR}, #{masterid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{createtime,jdbcType=DATE}
+    )
+    </insert>
+    <delete id="deleteMember">
+        <choose>
+            <when test="curGroup.masterid!=null"> 
+    delete from groupship
+    where groupid = (select id as groupid from `group` where id=#{curGroup.id} and masterid=#{curGroup.masterid} limit 0,1) and userid=#{memberid,jdbcType=VARCHAR}
+            </when>
+            <when test="curGroup.masterid==null">
+    delete from groupship
+    where groupid = #{curGroup.id} and userid=#{memberid,jdbcType=VARCHAR} and (select count(id) from `group` where id=#{curGroup.id} and masterid=#{memberid} limit 0,1)==0
+            </when>
+        </choose>
+
+    </delete>
+    <delete id="deleteMembersByGroupid" parameterType="java.lang.String">
+    delete from groupship  where groupid = #{groupid,jdbcType=VARCHAR}
+    </delete>
+    <insert id="insertMember" parameterType="com.yyj.nettychat.model.GroupMember">
+    insert into groupship(id,userid,groupid,createtime,status)
+    select #{groupMember.id,jdbcType=VARCHAR}, #{groupMember.member.userid,jdbcType=VARCHAR}, #{groupMember.groupid,jdbcType=VARCHAR}, #{groupMember.createtime,jdbcType=DATE}, #{groupMember.status,jdbcType=INTEGER}
+    from DUAL
+    where 
+    EXISTS(SELECT id FROM `group` WHERE id =  #{groupMember.groupid,jdbcType=VARCHAR} ) 
+    AND 
+    NOT EXISTS(select id from groupship where userid=#{groupMember.member.userid,jdbcType=VARCHAR} and groupid=#{groupMember.groupid,jdbcType=VARCHAR}) 
+    </insert>
+    <select id="seleteGroup" resultMap="GroupResultMap">
+        select
+        <include refid="Group_Column_List"/>
+        from `group`
+        where id =  #{id,jdbcType=VARCHAR}  ORDER BY  createtime
+    </select>
+    <select id="seleteMembers" parameterType="java.lang.String" resultMap="MemberResultMap">
+        select
+        <include refid="Groupship_Column_List"/>
+        from groupship
+        where groupid = #{id,jdbcType=VARCHAR} and status=1
+    </select>
+    <select id="seleteMember" parameterType="com.yyj.nettychat.model.GroupMember" resultMap="MemberResultMap">
+        select
+        <include refid="Groupship_Column_List"/>
+        from groupship
+        where groupid = #{groupid,jdbcType=VARCHAR} and userid=#{member.userid,jdbcType=VARCHAR}
+    </select>
+    <select id="selectGroupsByuserid" parameterType="java.lang.String" resultMap="GroupResultMap">
+        select
+        <include refid="Group_Column_List"/>
+        from `group`
+        where id in (select groupid as id from groupship where userid=#{userid} and status=1)
+    </select>
+    <select id="getOwnedGroupsNum" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(id) from `group` where masterid=#{masterid}
+    </select>
+    <update id="updateGroupName" parameterType="com.yyj.nettychat.model.Group">
+        update `group` set name=#{name} where masterid=#{masterid} and id=#{id}
+    </update>
+    <update id="updateGroupMemberStatus">
+        update `groupship` set status=1 where userid=#{memberid} and groupid=(select id as groupid from `group` where id=#{curGroup.id} and masterid=#{curGroup.masterid} limit 0,1) and status=0
+    </update>
+    <select id="getGroupMemberZeroStatus" resultMap="MemberResultMap">
+        select
+        <include refid="Groupship_Column_List"/>
+        from groupship
+        where groupid in (select id as groupid from `group` where masterid=#{masterid}) and status=0
+    </select>
+</mapper>

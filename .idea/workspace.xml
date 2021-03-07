@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ThreadBinaryTree:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7fc78526-74b7-4291-a579-0b280f31878f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_devtools_2_1_13_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nettychat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/nettychat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/config/rabbitmq/Receiver/FriendMsgReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/config/rabbitmq/Receiver/FriendMsgReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/config/rabbitmq/Receiver/GroupMsgReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/config/rabbitmq/Receiver/GroupMsgReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/model/Group.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/model/Group.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/model/GroupMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/model/GroupMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/service/impl/GroupServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yyj/nettychat/service/impl/GroupServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/GroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/chat/chatsystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/chat/chatsystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/NettychatApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/NettychatApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/FastDFSConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/FastDFSConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/NettyBooter$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/NettyBooter$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/NettyBooter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/NettyBooter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/ChatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/ChatHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/HearBeatHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/HearBeatHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/LoginCheckHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/LoginCheckHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketServer$SingleWebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketServer$SingleWebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/nettycontroller/WebSocketServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/push/AsyncCenter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/push/AsyncCenter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/Receiver/FriendMsgReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/Receiver/FriendMsgReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/Receiver/GroupMsgReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/Receiver/GroupMsgReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/TopicRabbitConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/rabbitmq/TopicRabbitConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/shiro/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/shiro/UserRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/config/shiro/UserRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/ExceptionHandlerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/ExceptionHandlerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/FriendController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/FriendController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/GroupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/GroupController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/controller/ViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ChannelMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ChannelMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ChatMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ChatMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/FileType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/FileType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/FriendPushEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/FriendPushEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/GroupPushEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/GroupPushEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/MsgActionEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/MsgActionEnum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ResponseResult$DefaultResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ResponseResult$DefaultResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ResponseResult.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/ResponseResult.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/UserChannelMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/entity/UserChannelMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/FriendshipMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/FriendshipMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/GroupMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/GroupMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/PermissionMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/PermissionMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/RoleMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/RoleMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Friendship.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Friendship.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Group.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Group.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/GroupMember.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/GroupMember.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Permission.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Permission.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/User$UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/User$UserInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/model/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/FriendService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/FriendService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/GroupService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/GroupService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/RoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/RoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/FriendServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/FriendServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/GroupServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/GroupServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/RoleServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/RoleServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/FastDFSClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/FastDFSClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/IdWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/IdWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/MD5Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/MD5Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/RedisUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/RedisUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/SpringUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/SpringUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/ZipUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/yyj/nettychat/util/ZipUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/GroupMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/GroupMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/chat/chatsystem.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/chat/chatsystem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/yyj/nettychat/NettychatApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/yyj/nettychat/NettychatApplicationTests.class" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="JavaFXApplication" />
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="E:\Program Files\JetBrains\IntelliJ IDEA 2019.2.4\plugins\maven\lib\maven3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="1Znck5IVxN5FBzdwRxn9bVH05gE" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test1" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yyj.nettychat" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\代码保存\java\nettychat\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NettychatApplication">
+    <configuration name="BinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test4.BinaryTree" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BinaryTree2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test4.BinaryTree2" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadBinaryTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test4.ThreadBinaryTree" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test4.test" />
+      <module name="algorithm" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test4.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettychatApplicationTests.test4" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nettychat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yyj.nettychat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yyj.nettychat" />
+      <option name="MAIN_CLASS_NAME" value="com.yyj.nettychat.NettychatApplicationTests" />
+      <option name="METHOD_NAME" value="test4" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NettychatApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="nettychat" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yyj.nettychat.NettychatApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.NettychatApplicationTests.test4" />
+        <item itemvalue="Application.ThreadBinaryTree" />
+        <item itemvalue="Application.BinaryTree2" />
+        <item itemvalue="Application.BinaryTree" />
+        <item itemvalue="Application.test" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7fc78526-74b7-4291-a579-0b280f31878f" name="Default Changelist" comment="" />
+      <created>1585478438228</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585478438228</updated>
+      <workItem from="1585478442424" duration="14000" />
+      <workItem from="1585478512521" duration="1190000" />
+      <workItem from="1585479719416" duration="2039000" />
+      <workItem from="1585641765591" duration="7928000" />
+      <workItem from="1585813510667" duration="12921000" />
+      <workItem from="1585903805076" duration="15114000" />
+      <workItem from="1585923729118" duration="2351000" />
+      <workItem from="1586005020787" duration="3657000" />
+      <workItem from="1586083551821" duration="5773000" />
+      <workItem from="1586182691851" duration="3578000" />
+      <workItem from="1586244161436" duration="5629000" />
+      <workItem from="1586271421754" duration="3174000" />
+      <workItem from="1586324369037" duration="9984000" />
+      <workItem from="1586398144766" duration="11767000" />
+      <workItem from="1586503553080" duration="9418000" />
+      <workItem from="1586587431367" duration="13857000" />
+      <workItem from="1586666238915" duration="3622000" />
+      <workItem from="1586754604781" duration="3804000" />
+      <workItem from="1586762953492" duration="3252000" />
+      <workItem from="1586776033357" duration="1209000" />
+      <workItem from="1586825153832" duration="8823000" />
+      <workItem from="1586876411532" duration="1631000" />
+      <workItem from="1586926570658" duration="9439000" />
+      <workItem from="1587100364557" duration="9906000" />
+      <workItem from="1587271010746" duration="2780000" />
+      <workItem from="1587276278624" duration="7489000" />
+      <workItem from="1587293181975" duration="980000" />
+      <workItem from="1587650857344" duration="4164000" />
+      <workItem from="1587699919515" duration="2960000" />
+      <workItem from="1587703313896" duration="316000" />
+      <workItem from="1587886094581" duration="9961000" />
+      <workItem from="1587972679917" duration="10679000" />
+      <workItem from="1588051278539" duration="13494000" />
+      <workItem from="1588145223109" duration="4764000" />
+      <workItem from="1588246025661" duration="4093000" />
+      <workItem from="1588301481399" duration="5898000" />
+      <workItem from="1588429136045" duration="6019000" />
+      <workItem from="1588559582990" duration="2379000" />
+      <workItem from="1588562295275" duration="1046000" />
+      <workItem from="1588682188482" duration="3250000" />
+      <workItem from="1588750195984" duration="9427000" />
+      <workItem from="1588834242764" duration="9838000" />
+      <workItem from="1589080768883" duration="4319000" />
+      <workItem from="1589179382255" duration="6064000" />
+      <workItem from="1589248027167" duration="5337000" />
+      <workItem from="1589433096461" duration="1069000" />
+      <workItem from="1589535438027" duration="2421000" />
+      <workItem from="1589791733056" duration="974000" />
+      <workItem from="1590060515873" duration="5797000" />
+      <workItem from="1590137217773" duration="5965000" />
+      <workItem from="1590215365335" duration="2894000" />
+      <workItem from="1590312417259" duration="3063000" />
+      <workItem from="1590391885009" duration="8967000" />
+      <workItem from="1590909298167" duration="9030000" />
+      <workItem from="1591089477809" duration="6192000" />
+      <workItem from="1591345025471" duration="3882000" />
+      <workItem from="1591436536797" duration="1313000" />
+      <workItem from="1591523651874" duration="4405000" />
+      <workItem from="1591881948313" duration="469000" />
+      <workItem from="1592715310705" duration="1576000" />
+      <workItem from="1592730232138" duration="3992000" />
+      <workItem from="1592816655553" duration="6105000" />
+      <workItem from="1592898633288" duration="7475000" />
+      <workItem from="1592986450066" duration="7900000" />
+      <workItem from="1593250672807" duration="4841000" />
+      <workItem from="1593352725899" duration="2158000" />
+      <workItem from="1593670314953" duration="2577000" />
+      <workItem from="1599989320515" duration="450000" />
+      <workItem from="1602989197612" duration="686000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

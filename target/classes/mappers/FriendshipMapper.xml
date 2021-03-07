@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yyj.nettychat.mapper.FriendshipMapper">
+    <resultMap id="BaseResultMap" type="com.yyj.nettychat.model.Friendship">
+        <id column="id" jdbcType="VARCHAR" property="id"/>
+        <result column="fromid" jdbcType="VARCHAR" property="fromid"/>
+        <result column="toid" jdbcType="VARCHAR" property="toid"/>
+        <result column="createtime" jdbcType="DATE" property="createtime"/>
+        <result column="state" jdbcType="INTEGER" property="status"/>
+    </resultMap>
+    <resultMap id="UserResultMap2" type="com.yyj.nettychat.model.User">
+        <id column="userid" jdbcType="VARCHAR" property="userid"></id>
+        <result column="username" jdbcType="VARCHAR" property="username"></result>
+        <result column="nickname" jdbcType="VARCHAR" property="nickname"></result>
+        <result column="photo" jdbcType="VARCHAR" property="photo"></result>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id,fromid,toid,createtime,state
+  </sql>
+    <insert id="insert" parameterType="com.yyj.nettychat.model.Friendship">
+    insert into friendship(id,fromid,toid,createtime,state)
+    values (
+    #{id,jdbcType=VARCHAR},
+    #{fromid,jdbcType=VARCHAR},
+    #{toid,jdbcType=VARCHAR},
+    #{createtime,jdbcType=DATE},
+    #{state,jdbcType=INTEGER}
+    )
+    </insert>
+    <delete id="delete" parameterType="java.lang.String">
+    delete from friendship
+    where fromid=#{fromid,jdbcType=VARCHAR} and toid=#{toid,jdbcType=VARCHAR}
+  </delete>
+    <update id="updateFriendshipState" parameterType="com.yyj.nettychat.model.Friendship">
+        update friendship
+        <set>
+            state=#{state}
+        </set>
+        <where>
+            fromid=fromid and toid = toid and state=0
+        </where>
+    </update>
+    <select id="selectFriendsByPrimaryKey" parameterType="com.yyj.nettychat.model.Friendship"
+            resultMap="UserResultMap2">
+        select userid, username,nickname,photo,email from user
+        <where>
+            userid in (
+            <choose>
+                <when test="state==1">
+                    select toid as userid from friendship where
+                    <choose>
+                        <when test="toid!=null">
+                            fromid=#{fromid,jdbcType=VARCHAR} and toid=#{toid,jdbcType=VARCHAR}
+                        </when>
+                        <when test="toid==null">
+                            fromid=#{fromid,jdbcType=VARCHAR}
+                        </when>
+                    </choose>
+                    and state=1
+                </when>
+                <when test="state==0">
+                    select fromid as userid from friendship where
+                    <choose>
+                        <when test="fromid!=null">
+                            fromid=#{fromid,jdbcType=VARCHAR} and toid=#{toid,jdbcType=VARCHAR}
+                        </when>
+                        <when test="fromid==null">
+                            toid=#{toid,jdbcType=VARCHAR} and state = 0
+                        </when>
+                    </choose>
+                </when>
+            </choose>
+            )
+        </where>
+    </select>
+</mapper>
